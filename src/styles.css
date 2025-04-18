@@ -1,0 +1,13 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.pagination_row {
+  margin-left: 8px;
+}
+
+.activeClass {
+  background-color: blue;
+  color: aliceblue;
+}
