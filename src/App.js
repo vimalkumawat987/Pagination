@@ -3,9 +3,9 @@ import "./styles.css";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState(1);
-  const [selectPage, setSelectPage] = useState(5);
+  const [selectedPageSize, setSelectedPageSize] = useState(5);
   const TOTAL_PAGE = 53;
-  const SHOW_PER_PAGE = selectPage;
+  const SHOW_PER_PAGE = Number(selectedPageSize);
 
   const showTotalPage = Math.ceil(TOTAL_PAGE / SHOW_PER_PAGE);
 
@@ -15,7 +15,12 @@ export default function App() {
       <div>
         <div>
           <labal>Select Page</labal>
-          <select onChange={(e) => setSelectPage(e.target.value)}>
+          <select
+            onChange={(e) => {
+              setSelectedPageSize(e.target.value);
+              setCurrentPage(1);
+            }}
+          >
             <option>5</option>
             <option>10</option>
             <option>20</option>
